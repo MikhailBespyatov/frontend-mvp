@@ -1,0 +1,41 @@
+:root {
+    --color-light-bg-tertiary-inverted: #3c4c5d;
+}
+:root {
+
+    /* Hard */
+
+    /* Up */
+
+    /* Hard up */
+}
+:root {
+    --gap-3xs: 2px;
+    --gap-xl: 24px;
+}
+.component {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 10px var(--gap-xl);
+    -ms-overflow-style: none;
+    background-color: var(--color-light-bg-tertiary-inverted);
+    scrollbar-width: none
+}
+.component::-webkit-scrollbar {
+        display: none;
+    }
+.preview {
+    flex-shrink: 0;
+    margin: 0 var(--gap-3xs)
+}
+.preview:first-child {
+        margin-left: auto;
+    }
+.preview:last-child {
+        margin-right: auto;
+    }

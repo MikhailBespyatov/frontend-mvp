@@ -1,0 +1,48 @@
+:root {
+    --color-light-border-primary: #dbdee1;
+}
+:root {
+
+    /* Hard */
+
+    /* Up */
+
+    /* Hard up */
+}
+:root {
+    --gap-2xs: 4px;
+    --gap-xs: 8px;
+    --gap-m: 16px;
+    --gap-xl: 24px;
+    --gap-2xl: 32px;
+}
+.component {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: var(--gap-xl) var(--gap-m) var(--gap-2xl);
+    border-top: 1px solid var(--color-light-border-primary);
+    box-sizing: border-box;
+}
+.pagesWrapper {
+    display: flex;
+}
+.tag.tag {
+    flex-shrink: 0;
+    margin-right: var(--gap-xs);
+    padding: 0 var(--gap-xs);
+    min-width: 32px
+}
+.tag.tag:last-child {
+        margin-right: 0;
+    }
+.tag.tag.tagActive {
+        cursor: default;
+    }
+.menu {
+    margin: var(--gap-2xs) 0;
+}
+.option {
+    min-width: 208px;
+}

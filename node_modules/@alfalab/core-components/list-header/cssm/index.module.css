@@ -1,0 +1,31 @@
+:root {
+    --color-light-specialbg-component: rgba(11, 31, 53, 0.07);
+}
+:root {
+
+    /* Hard */
+
+    /* Up */
+
+    /* Hard up */
+}
+:root {
+    --gap-xs: 8px;
+    --gap-s: 12px;
+    --gap-m: 16px;
+    --gap-xl: 24px;
+    --gap-s-neg: -12px;
+}
+:root {
+    --list-header-description-opacity: 0.6;
+}
+.component {
+    margin: var(--gap-xl) var(--gap-s-neg) var(--gap-m);
+    padding: var(--gap-xs) var(--gap-s);
+}
+.description {
+    opacity: var(--list-header-description-opacity);
+}
+.filled {
+    background-color: var(--color-light-specialbg-component);
+}

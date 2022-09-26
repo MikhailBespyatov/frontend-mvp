@@ -1,0 +1,94 @@
+import { useState, useRef, useCallback } from 'react';
+
+function useTabs(_a) {
+    var _b = _a.titles, titles = _b === void 0 ? [] : _b, selectedId = _a.selectedId, onChange = _a.onChange;
+    var _c = useState(null), selectedTab = _c[0], setSelectedTab = _c[1];
+    var _d = useState(null), focusedTab = _d[0], setFocusedTab = _d[1];
+    var itemRefs = useRef([]);
+    var handleItemRef = useCallback(function (node, item, index) {
+        if (node && item.id === selectedId)
+            setSelectedTab(node);
+        itemRefs.current[index] = node;
+    }, [selectedId]);
+    var handleItemClick = useCallback(function (event, item) {
+        if (onChange && item.id !== selectedId) {
+            onChange(event, { selectedId: item.id });
+        }
+    }, [onChange, selectedId]);
+    var focusTab = useCallback(function (position) {
+        var refs = itemRefs.current;
+        var tabAvailable = function (ref) { return ref && !ref.disabled; };
+        if (refs.every(function (ref) { return !tabAvailable(ref); }))
+            return;
+        var focusedTabIndex = refs.findIndex(function (node) { return document.activeElement === node; });
+        if (focusedTabIndex === -1) {
+            focusedTabIndex = refs.findIndex(function (node) { return node === selectedTab; });
+        }
+        var newFocusIndex;
+        switch (position) {
+            case 'prev':
+                newFocusIndex = focusedTabIndex === 0 ? refs.length - 1 : focusedTabIndex - 1;
+                break;
+            case 'next':
+                newFocusIndex = focusedTabIndex === refs.length - 1 ? 0 : focusedTabIndex + 1;
+                break;
+            case 'start':
+                newFocusIndex = 0;
+                break;
+            case 'end':
+                newFocusIndex = refs.length - 1;
+                break;
+        }
+        var shift = ['prev', 'end'].includes(position) ? -1 : 1;
+        while (!tabAvailable(refs[newFocusIndex])) {
+            newFocusIndex = (refs.length + newFocusIndex + shift) % refs.length;
+        }
+        refs[newFocusIndex].focus();
+        setFocusedTab(refs[newFocusIndex]);
+    }, [selectedTab, itemRefs]);
+    var handleKeyDown = useCallback(function (event) {
+        switch (event.key) {
+            case 'ArrowLeft':
+                focusTab('prev');
+                event.preventDefault();
+                break;
+            case 'ArrowRight':
+                focusTab('next');
+                event.preventDefault();
+                break;
+            case 'Home':
+                focusTab('start');
+                event.preventDefault();
+                break;
+            case 'End':
+                focusTab('end');
+                event.preventDefault();
+                break;
+        }
+    }, [focusTab]);
+    var getTabListItemProps = function (index, outerRef) {
+        var item = titles[index];
+        var itemSelected = item.id === selectedId;
+        return {
+            role: 'tab',
+            tabIndex: itemSelected ? 0 : -1,
+            'aria-selected': itemSelected,
+            disabled: item.disabled,
+            ref: function (node) {
+                // eslint-disable-next-line no-param-reassign
+                if (outerRef)
+                    outerRef.current = node;
+                handleItemRef(node, item, index);
+            },
+            onKeyDown: handleKeyDown,
+            onClick: function (event) { return handleItemClick(event, item); },
+        };
+    };
+    return {
+        getTabListItemProps: getTabListItemProps,
+        selectedTab: selectedTab,
+        focusedTab: focusedTab,
+    };
+}
+
+export { useTabs };

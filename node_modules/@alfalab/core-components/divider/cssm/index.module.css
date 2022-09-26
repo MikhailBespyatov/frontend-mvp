@@ -1,0 +1,19 @@
+:root {
+    --color-light-border-primary: #dbdee1;
+}
+:root {
+
+    /* Hard */
+
+    /* Up */
+
+    /* Hard up */
+}
+:root {
+    --divider-color: var(--color-light-border-primary);
+}
+.component {
+    border: none;
+    border-bottom: 1px solid var(--divider-color);
+    margin: 0;
+}

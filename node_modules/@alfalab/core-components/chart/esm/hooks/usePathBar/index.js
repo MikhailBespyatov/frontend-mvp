@@ -1,0 +1,37 @@
+import { useState, useEffect } from 'react';
+import { getRadius } from './utils/getRadius.js';
+
+var usePathBar = function (props) {
+    var _a = useState(0), topRadius = _a[0], setTopRadius = _a[1];
+    var _b = useState(0), bottomRadius = _b[0], setBottomRadius = _b[1];
+    var _c = useState(0), initHeight = _c[0], setInitHeight = _c[1];
+    var _d = useState(0), initY = _d[0], setInitY = _d[1];
+    useEffect(function () {
+        var radius = props.radius, height = props.height, background = props.background, y = props.y;
+        var radiusTop = (radius === null || radius === void 0 ? void 0 : radius.top) ? getRadius(height, radius.top) : 0;
+        var radiusBottom = (radius === null || radius === void 0 ? void 0 : radius.bottom) ? getRadius(height, radius.bottom) : 0;
+        var heightCheck = (radius && height !== 0 && height / 2 < ((radius === null || radius === void 0 ? void 0 : radius.top) || 0)) ||
+            height / 2 < ((radius === null || radius === void 0 ? void 0 : radius.bottom) || 0);
+        // eslint-disable-next-line no-nested-ternary
+        var heightInit = heightCheck
+            ? (radiusTop || radiusBottom) && radiusTop + radiusBottom
+            : height > 0 && height < 2
+                ? 2
+                : height;
+        if (background && y) {
+            var yInit = heightCheck
+                ? background.height + background.y - (radiusTop + radiusBottom)
+                : y;
+            setInitY(yInit);
+        }
+        if (radiusTop !== 0)
+            setTopRadius(radiusTop);
+        if (radiusBottom !== 0)
+            setBottomRadius(radiusBottom);
+        if (heightInit !== 0)
+            setInitHeight(heightInit);
+    }, [props]);
+    return [initHeight, topRadius, bottomRadius, initY];
+};
+
+export { usePathBar };

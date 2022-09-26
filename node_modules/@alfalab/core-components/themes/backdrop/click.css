@@ -1,0 +1,4 @@
+:root {
+    /* TODO: в темной теме что-то не то */
+    --backdrop-visible-background: var(--color-light-graphic-primary-alpha-50);
+}
