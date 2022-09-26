@@ -1,4 +1,0 @@
-@define-mixin list-click {
-    /* theme */
-    --list-item-margin: var(--gap-m);
-}
