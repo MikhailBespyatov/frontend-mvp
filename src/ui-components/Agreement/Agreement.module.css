@@ -1,0 +1,83 @@
+:root {
+    --checkbox-checked-bg-color: #007aff !important;
+    --checkbox-checked-border-color: #007aff !important;
+    --checkbox-checked-hover-bg-color: #007aff !important;
+    --checkbox-checked-hover-border-color: #007aff !important;
+    --checkbox-checked-active-bg-color: #007aff !important;
+    --checkbox-checked-active-border-color: #007aff !important;
+    --form-control-bg-color: white;
+    --form-control-hover-bg-color: white;
+}
+
+.agreement {
+    display: flex;
+    flex-direction: row;
+    margin-top: 29px;
+}
+
+.agreement p span,
+.agreement p a {
+    font-size: 13px;
+    line-height: 22px;
+    color: rgba(23, 42, 63, 1);
+}
+
+.agreement a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(23, 42, 63, 1);
+    padding-bottom: 1px;
+}
+
+.agreement p {
+    margin-top: 3px;
+    margin-left: 7px;
+}
+
+.agreement p .active {
+    color: #f1463b;
+    border-bottom: 1px solid #f1463b;
+}
+
+.agreement a:hover {
+    color: #f1463b;
+    border-bottom: 1px solid #f1463b;
+}
+
+.agreement span {
+    margin-left: 0 !important;
+}
+
+/*************** media queries ***************/
+@media (max-width: 320px) {
+    .agreement p span,
+    .agreement p a {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1281px) {
+    .agreement {
+        margin-top: 10px;
+    }
+
+    .agreement p {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1281px) {
+    .agreement label span {
+        line-height: unset;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .agreement label span {
+        background-color: #0b1f35;
+    }
+    .agreement p span,
+    .agreement p a {
+        color: #b6bcc3;
+        border-color: #b6bcc3;
+    }
+}

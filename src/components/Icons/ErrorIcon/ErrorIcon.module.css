@@ -1,0 +1,13 @@
+.svg {
+  position: relative;
+  top: 0;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error svg {
+  color: white;
+  background-color: rgba(255, 92, 92, 1);
+}

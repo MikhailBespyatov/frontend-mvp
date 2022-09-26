@@ -1,0 +1,156 @@
+.wrapper {
+  padding: 24px 16px;
+}
+
+.title_wrapper {
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.success_icon {
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #172A3F;
+  margin-bottom: 8px;
+}
+
+.desctiption {
+  font-size: 16px;
+  line-height: 22px;
+  color: #6D7986;
+  margin: 0;
+}
+
+.sum_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sum_wrapper span:first-child {
+  font-size: 16px;
+  line-height: 22px;
+  color: #6D7986;
+}
+
+.sum_wrapper span:last-child {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(239, 49, 36, 0.95);
+}
+
+.score {
+  width: 100%;
+  padding: 9px 16px;
+  border: 1px solid #6D7986;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.score span:first-child {
+  font-size: 16px;
+  line-height: 22px;
+  color: #6D7986;
+}
+
+.score span:last-child {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #172A3F;
+}
+
+.btn_wrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn_wrapper div {
+  width: 100%;
+}
+
+.btn_wrapper div:first-child {
+  margin-right: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: white;
+  }
+}
+
+@media (min-width: 520px) {
+  .content_wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 86px 0;
+  }
+
+  .btn_wrapper {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content_wrapper {
+    max-width: 610px;
+    margin: 0 auto;
+    padding: 86px 0;
+  }
+
+  .main_wrapper {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    background: url('assets/images/linking_card/cloud.svg') no-repeat 1% 5%,
+    url('assets/images/linking_card/cloud.svg') no-repeat 99% 5%,
+    url('assets/images/linking_card/baloons.svg') no-repeat 92% 49%,
+    url('assets/images/linking_card/cloud.svg') no-repeat 98% 90%;
+    background-size: 323px 241px, 217px 162px, 229px 540px, 127px 95px;
+  }
+
+  .success_icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title_wrapper {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .desctiption {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .btn_wrapper {
+    max-width: 350px;
+  }
+}

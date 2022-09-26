@@ -1,0 +1,350 @@
+:root {
+    --form-control-hover-bg-color: white !important;
+    --form-control-focus-bg-color: white !important;
+    --form-control-fill-color: white !important;
+    --form-constrol-input-color: white !important;
+    --confirmation-title-font-weight: 400;
+    --confirmation-title-color: rgba(109, 121, 134, 1) !important;
+    --confirmation-input-bg-color: white;
+    --confirmation-input-font-size: 18px;
+    --button-secondary-base-bg-color: white !important;
+    --button-secondary-hover-bg-color: white !important;
+    --gap-2xl: 10px !important;
+    --gap-2xs: 8px !important;
+    --gap-m: 10px !important;
+}
+
+.title {
+    font-size: 13px;
+    color: grey;
+    border: none;
+    padding: 0;
+    text-align: initial;
+}
+
+.wrapper {
+    text-align: center;
+    padding: 0 16px;
+}
+
+.wrapper button {
+    color: #f1463b !important;
+    border-radius: unset !important;
+    background-color: unset;
+}
+
+.wrapper button span {
+    font-size: 16px !important;
+}
+
+.wrapper input {
+    border-bottom: 1px solid rgba(151, 151, 151, 1) !important;
+    border-radius: 0;
+    color: #011438;
+    background-color: unset;
+    height: 35px;
+}
+
+.disable input {
+    pointer-events: none;
+}
+
+.wrapper div div:nth-child(1) div a span {
+    display: none;
+}
+
+.wrapper div div div {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #6d7986;
+}
+
+.wrapper div div div div div div div {
+    color: rgba(241, 70, 59, 1);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: -5px;
+    min-width: unset;
+}
+
+.wrapper div span {
+    text-align: center;
+    font-size: 13px !important;
+    margin: 10px 0;
+}
+
+.wrapper div button span {
+    font-size: 16px !important;
+}
+
+.smsWrapper input {
+    border-bottom: 1px solid black !important;
+    margin: 20px 5px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.smsWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.smsWrapper div::before {
+    border-bottom: none;
+}
+
+.timer {
+    color: #59a8ff;
+    margin-left: 5px;
+}
+
+.timer_wrapper {
+    margin-top: 20px;
+}
+
+.confirmation div .countdown div svg {
+    background-color: red;
+}
+
+.titleError h1 {
+    color: #ff5c5c;
+}
+
+.wrapper svg {
+    display: none;
+}
+
+.confirmationHeaderCustom {
+    font-size: 16px;
+    text-align: left;
+    font-weight: normal;
+    color: var(--confirmation-title-color) !important;
+
+    line-height: var(--confirmation-title-line-height);
+}
+
+/**************** media queries ****************/
+@media (max-width: 320px) {
+    .wrapper div span {
+        text-align: left;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 321px) {
+    .wrapper input {
+        width: 58px;
+    }
+
+    .wrapper h1 {
+        font-size: 22px;
+    }
+
+    .confirmation span {
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: 322px) {
+    .wrapper h1 {
+        text-align: left;
+    }
+
+    .wrapper div span {
+        text-align: left;
+        font-weight: normal;
+    }
+
+    .overlay {
+        font-size: 23px;
+    }
+
+    .confirmation span {
+        font-size: 16px !important;
+    }
+
+    .wrapper input {
+        width: 67px;
+    }
+}
+
+@media (min-width: 480px) {
+    .main_container {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .form_container {
+        width: 75%;
+    }
+
+    .wrapper {
+        align-items: end;
+    }
+
+    .wrapper h1 {
+        text-align: center;
+    }
+
+    .wrapper div button span {
+        font-size: 18px !important;
+    }
+
+    .wrapper div span {
+        font-size: 18px !important;
+        text-align: center;
+        font-weight: normal;
+        margin: 25px auto auto;
+        line-height: 32px;
+    }
+
+    .wrapper button span {
+        font-size: 18px !important;
+    }
+
+    .confirmationHeaderCustom {
+        white-space: break-spaces;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 520px) and (min-height: 801px) {
+    .main_container {
+        position: absolute;
+        right: 14%;
+        top: 7%;
+    }
+
+    .wrapper div div div {
+        font-size: 18px;
+    }
+
+    .wrapper div div div div div div div {
+        font-size: 18px;
+    }
+
+    .wrapper h1 {
+        padding-top: 11vh !important;
+        font-size: 40px !important;
+        line-height: 48px;
+    }
+
+    .wrapper {
+        background-image: url('../../../assets/images/screen1/step1-2_tablet_bg.svg') !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 92vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .confirmation span {
+        font-size: 18px !important;
+    }
+
+    .wrapper {
+        align-items: end;
+    }
+
+    .wrapper h1 {
+        text-align: center;
+    }
+
+    .main_container {
+        width: 37%;
+        margin: 0 auto;
+    }
+
+    .form_container {
+        width: 75%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper div div div {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #6d7986;
+    }
+
+    .wrapper div div div div div div div {
+        font-size: 18px;
+    }
+
+    .wrapper input {
+        height: 95px !important;
+        width: 85px !important;
+        margin-right: 15px !important;
+    }
+
+    .wrapper {
+        background-image: url('../../../assets/images/screen1/step1-2_desktop_bg.svg');
+        height: 90vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}
+
+@media (min-width: 1800px) {
+    .wrapper input {
+        height: 50px !important;
+        width: 72px !important;
+        margin-right: 5px !important;
+    }
+
+    .wrapper div span:nth-child(1) {
+        font-size: 18px !important;
+        margin: 30px 0 !important;
+        text-align: center !important;
+    }
+
+    .wrapper div span:nth-child(2) {
+        height: 102px;
+        width: 102px;
+    }
+
+    .overlay div span {
+        font-size: 36px;
+        font-weight: 700;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .wrapper input {
+        color: #ffffff;
+        caret-color: #ffffff;
+    }
+
+    .wrapper div span,
+    .wrapper div div div {
+        color: #b6bcc3 !important;
+    }
+
+    .wrapper button span,
+    .wrapper div div div div div div div {
+        color: rgba(241, 70, 59, 1) !important;
+    }
+
+    @media (min-width: 1024px) {
+        .wrapper {
+            background-image: url('../../../assets/images/black_mode/screen1/step1-2_desktop_bg.svg');
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 600px) and (min-height: 801px) {
+        .wrapper {
+            background-image: url('../../../assets/images/black_mode/screen1/step1-2_tablet_bg.svg') !important;
+        }
+    }
+}

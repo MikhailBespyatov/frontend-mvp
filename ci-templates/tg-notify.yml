@@ -1,0 +1,43 @@
+.post_to_telegram: &post_to_telegram |
+  curl -s -X "POST" "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+    -x http://10.131.80.114:3128 \
+    -H 'Content-Type: application/json' \
+    -d $'{
+          "parse_mode": "html",
+          "disable_notification": true,
+          "chat_id": "'$TELEGRAM_BOT_GROUP'",
+          "text": "'"$MESSAGE"'"
+        }'
+
+notify:telegram-success:
+  stage: notify
+  image: registry-test.alfa-bank.kz/cicd/nodesass:12.18.v1
+  allow_failure: true
+  only:
+    - development
+    - dev
+    - master
+    - main
+  tags:
+    - vcloud
+  script:
+    - export GIT_VERSION=$(git describe --always)
+    # I place it here, because we are using git describe
+    - export MESSAGE="(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧\n<strong>Project:</strong> $CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME\n<strong>Branch:</strong> $CI_COMMIT_REF_NAME\n<strong>Commit:</strong> $CI_COMMIT_MESSAGE\n<strong>Project Version:</strong> $GIT_VERSION\n\nPipeline <strong>successfull</strong> - $CI_PIPELINE_URL"
+    - *post_to_telegram
+
+notify:telegram-fail:
+  stage: notify
+  image: registry-test.alfa-bank.kz/cicd/nodesass:12.18.v1
+  allow_failure: true
+  only:
+    - development
+    - dev
+    - master
+    - main
+  tags:
+    - vcloud
+  when: on_failure
+  script:
+    - export MESSAGE="¯\_(ツ)_/¯\n<strong>Project:</strong> $CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME\n<strong>Branch:</strong> $CI_COMMIT_REF_NAME\n<strong>Commit:</strong> $CI_COMMIT_MESSAGE\n\nJob <strong>$CI_JOB_NAME</strong> failed - $CI_JOB_URL"
+    - *post_to_telegram

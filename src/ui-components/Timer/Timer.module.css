@@ -1,0 +1,54 @@
+.timer {
+    position: absolute;
+    right: 18px;
+    z-index: 1;
+}
+
+.content {
+    width: 280px;
+    font-size: 13px;
+}
+
+.arrow {
+    display: none;
+}
+
+.seconds {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #172a3f;
+    width: 90px;
+}
+
+.seconds span {
+    margin: auto 0;
+    width: 60px;
+    text-align: end;
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+    .timer {
+        top: 65px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .timer {
+        top: 16px;
+        right: 65px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .content {
+        background-color: #b6bcc3;
+    }
+
+    .seconds {
+        color: #fff;
+    }
+}

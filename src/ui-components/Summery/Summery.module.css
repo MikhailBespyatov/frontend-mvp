@@ -1,0 +1,73 @@
+.summery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.summery span {
+    color: rgba(239, 49, 36, 0.95) !important;
+    font-size: 18px;
+    padding-right: 15px;
+    opacity: 1 !important;
+}
+
+.summery span span {
+    opacity: 1;
+    padding-right: 0;
+}
+
+.title {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 22px;
+    color: rgba(109, 121, 134, 1);
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/*************** media queries ***************/
+
+@media (min-width: 520px) and (max-width: 600px) {
+  .summery {
+    padding: 0 20px 16px;
+  }
+
+  .summery span {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+    .summery div:nth-child(2) {
+        margin-top: -16px;
+        padding-left: 0px;
+    }
+
+    .title {
+        padding: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .title,
+    .amount {
+        padding: 0 15px !important;
+        margin-bottom: 16px !important;
+    }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    .title,
+    .amount {
+        padding: 0 15px !important;
+        margin-bottom: 16px !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .title {
+        color: #b6bcc3;
+    }
+}

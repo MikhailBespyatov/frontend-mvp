@@ -1,0 +1,249 @@
+.main_container {
+    height: 80vh;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cloud {
+    display: none;
+    position: absolute;
+}
+
+.cloud_three {
+    left: 505px;
+    bottom: 0;
+    height: 76.65px;
+    width: 111.58px;
+}
+
+.single_title h1 {
+    color: rgba(23, 42, 63, 1);
+}
+
+.title_wrapper::before {
+    content: ' ' !important;
+    display: block !important;
+    margin: auto;
+    height: 1px !important;
+    background: #979797 !important;
+    width: 90vw !important;
+}
+
+@media (min-width: 320px) {
+    .img {
+        width: 90vw;
+        height: 45vh;
+    }
+
+    .single_title .title {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        color: rgba(23, 42, 63, 1);
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .single_title .title span {
+        display: block;
+    }
+
+    .single_title .title,
+    .title_wrapper .title {
+        margin: 10px auto !important;
+        max-width: 250px;
+    }
+
+    .title_wrapper h1 {
+        font-style: normal !important;
+        line-height: 24px;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        color: rgba(109, 121, 134, 1) !important;
+    }
+
+    .btn_wrapper {
+        position: absolute;
+        bottom: 15px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .btn_wrapper div {
+        display: initial;
+        width: 44% !important;
+    }
+
+    .btn_wrapper div div {
+        width: 100%;
+    }
+
+    .btn_wrapper button {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (min-width: 360px) {
+    .main_container {
+        /* justify-content: center; */
+    }
+
+    .single_title .title {
+        max-width: 350px;
+    }
+
+    .single_title .title span {
+        display: unset;
+    }
+
+    .btn_wrapper {
+        bottom: 5px;
+    }
+
+    .btn_wrapper div:nth-child(1) {
+        width: 40% !important;
+    }
+
+    .btn_wrapper div:nth-child(2) {
+        width: 50% !important;
+    }
+}
+
+@media (min-width: 600px) {
+    .cloud {
+        display: block;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .img {
+        width: 50vw;
+        height: 45vh;
+    }
+
+    .single_title {
+        margin: 20px auto !important;
+    }
+
+    .single_title h1 {
+        display: block;
+    }
+
+    .single_title .title {
+        max-width: 530px;
+        font-size: 30px !important;
+        line-height: 32px !important;
+        font-style: normal !important;
+    }
+
+    .title_wrapper {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        color: rgba(109, 121, 134, 1) !important;
+        line-height: 18px !important;
+        font-style: normal !important;
+    }
+
+    .title_wrapper::before {
+        margin: 30px auto;
+        width: 336px !important;
+    }
+
+    .title_wrapper .title {
+        max-width: unset;
+    }
+
+    .title_wrapper h1 {
+        font-size: 18px !important;
+    }
+
+    .cloud_one {
+        top: 70px;
+    }
+
+    .cloud_two {
+        right: 67px;
+        top: 128px;
+    }
+
+    .cloud_three {
+        left: 18%;
+    }
+
+    .btn_wrapper {
+        position: relative;
+        width: 690px;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .btn_wrapper div:nth-child(1),
+    .btn_wrapper div:nth-child(2) {
+        width: 44% !important;
+    }
+
+    .btn_wrapper div {
+        width: 100% !important;
+    }
+
+    .btn_wrapper button {
+        margin-top: 40px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 600px) and (min-height: 801px) {
+    .img {
+        width: 50vw;
+        height: 40vh;
+    }
+
+    .cloud_one {
+        left: 5vw;
+    }
+
+    .cloud_two {
+        width: 20vw;
+        right: 30px;
+    }
+
+    .cloud_three {
+        width: 120px;
+        bottom: 5vh !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    .img {
+        width: 35%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .img {
+        width: 50vw;
+        height: 47vh;
+        margin-top: 101px;
+    }
+
+    .cloud_three {
+        left: 20vw;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .single_title .title {
+        color: #fff;
+    }
+    .title_wrapper .title {
+        color: #b6bcc3 !important;
+    }
+}

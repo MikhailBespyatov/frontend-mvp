@@ -1,0 +1,512 @@
+:root {
+    --amount-major-part-font-weight: bold;
+    --amount-minor-part-font-weight: bold;
+    --gap-m: 20px !important;
+    --gap-3xl: 20px !important;
+    --border-radius-m: 4px;
+    --tooltip-bg-color: var(--color-light-text-primary);
+}
+
+.title {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(109, 121, 134, 1);
+}
+
+.desktop_wrapper,
+.mobile_wrapper {
+    display: none;
+}
+
+.scheduleList {
+    background: rgba(243, 244, 245, 1);
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.scheduleList ul {
+    margin: 15px;
+    list-style-type: none;
+    padding: 0;
+    border-bottom: 1px solid #8080803b;
+}
+
+.scheduleList ul li {
+    margin: 10px 0;
+    height: 60px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+}
+
+.scheduleList ul li div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.scheduleList ul li div span span {
+    color: black;
+    opacity: 1;
+}
+
+.scheduleList ul li:nth-child(1) {
+    padding: 5 15px;
+    border-bottom: 1px solid #8080803b;
+}
+
+.amount_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.scheduleFirstPayment {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.popover {
+    width: 340px;
+    padding: 0 15px;
+}
+
+.popover_content {
+    position: absolute;
+    left: 90px;
+    right: 8.27%;
+    bottom: 43.42%;
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 1px 5px rgba(11, 31, 53, 0.25);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: fit-content;
+    z-index: 11;
+    top: 280px;
+}
+
+.popover_content span {
+    position: absolute;
+    right: -137px;
+    font-size: 18px;
+    color: rgba(23, 42, 63, 1);
+    top: 0;
+}
+
+.popover_content p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgba(23, 42, 63, 1);
+    margin: 0;
+    width: 245px;
+}
+
+.tooltip_arrow {
+    display: none;
+}
+
+.tooltip div {
+    background-color: white;
+}
+
+.detail_modal {
+    background-color: white;
+    position: fixed;
+    width: 400px;
+    z-index: 99999;
+    box-shadow: 0px 1px 5px rgba(11, 31, 53, 0.25);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: fit-content;
+    margin-top: 20px;
+    margin-left: -110px;
+}
+
+.details div:nth-child(1) {
+    z-index: 1;
+}
+
+.detail_modal span {
+    position: absolute;
+    right: -2px;
+    font-size: 25px;
+    color: rgba(23, 42, 63, 1);
+    top: 1px;
+}
+
+.detail_modal p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    color: rgba(23, 42, 63, 1);
+    margin: 0;
+}
+
+.detail_modal a {
+    color: rgba(255, 92, 92, 1);
+    font-size: 13px;
+    background-color: white;
+    padding: 0;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.payment_date {
+    color: #172a3f;
+    font-size: 18px;
+}
+
+.mobileContent {
+    color: #172a3f;
+}
+
+.payment_amount span span,
+.payment_date span span {
+    opacity: 1 !important;
+}
+
+/*************** media queries ***************/
+@media (min-width: 320px) {
+    .mobile_wrapper {
+        display: block;
+    }
+
+    .timePeriod,
+    .amount,
+    .scheduleSummery,
+    .scheduleListItem div div h6 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+
+    .timePeriod,
+    .amount {
+        color: #ef3124;
+    }
+
+    .amount,
+    .amount span {
+        color: rgba(239, 49, 36, 0.95) !important;
+        opacity: 1;
+    }
+
+    .scheduleList li:nth-child(1) {
+        font-size: 16px;
+    }
+
+    .infoSection {
+        display: flex;
+        padding-left: 10px;
+        padding-bottom: 15px;
+    }
+
+    .infoSection span {
+        width: 100%;
+    }
+
+    .info {
+        cursor: pointer;
+    }
+
+    .details {
+        color: #ff5c5c;
+        margin: 10px;
+        border-radius: 30px;
+    }
+
+    .popover_content p {
+        width: 250px;
+    }
+
+    .popover_content span {
+        right: -4px;
+    }
+
+    .popover_content {
+        padding: 10px;
+        left: 27px;
+    }
+
+    .mobileContent {
+        margin-top: 13px;
+        font-size: 13px;
+    }
+
+    .closeBtn {
+        margin-top: -20px !important;
+        color: #172a3f;
+    }
+}
+
+@media (min-width: 360px) {
+    .popover_content {
+        width: 250px;
+        left: 53px;
+    }
+
+    .mobileContent {
+        margin-top: 13px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 376px) {
+    .mobileContent {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 411px) {
+    .popover_content {
+        width: 285px;
+        left: 14%;
+    }
+
+    .popover_content span {
+        right: -2px;
+    }
+
+    .popover_content p {
+        width: 305px;
+    }
+}
+
+@media (min-width: 480px) {
+    .popover_content {
+        top: 260px;
+    }
+}
+
+@media (min-width: 650px) {
+    .popover_content {
+        top: 260px;
+        left: 13%;
+    }
+}
+
+@media (min-width: 700px) {
+    .popover_content {
+        left: 93px;
+    }
+}
+
+@media (min-width: 700px) {
+    .popover_content {
+        left: 93px;
+    }
+}
+
+@media (min-width: 900px) {
+    .popover_content {
+        top: 235px;
+        left: 93px;
+    }
+}
+
+@media (min-width: 600px) {
+    .details {
+        color: #ff5c5c;
+        margin: 0 10px;
+    }
+
+    .title {
+        font-size: 16px;
+        margin: 14px 20px 8px;
+    }
+
+    .detail_modal {
+        margin-top: 130px;
+        margin-left: 0;
+        width: 282px;
+    }
+
+    .detail_modal span {
+        right: -160px;
+    }
+
+    .detail_modal p {
+        font-size: 13px;
+    }
+
+    .scheduleListFooterItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 630px;
+    }
+
+    .timePeriod,
+    .amount,
+    .scheduleSummery,
+    .scheduleListItem div div h6 {
+        margin-top: 0px;
+    }
+
+    .desktop_wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile_wrapper {
+        display: none;
+    }
+
+    .desktop_wrapper_one {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 630px;
+        margin-top: 20px;
+    }
+
+    .payment {
+        background: rgba(243, 244, 245, 1);
+        border-radius: 4px;
+        width: 49.5%;
+    }
+
+    .payment h6 {
+        font-size: 18px;
+        margin: 14px 20px;
+    }
+
+    .payment_amount {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 15px;
+    }
+
+    .payment_list {
+        background-color: #f3f4f5;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        width: 630px;
+        border-radius: 4px;
+        padding-top: 10px;
+    }
+
+    .scheduleListItem {
+        width: 310px;
+        padding-right: 2px;
+    }
+
+    .scheduleListItem:nth-child(2n + 1) {
+        border-right: 0.3px #b6bcc3 solid;
+        width: 315px;
+        height: 90px;
+    }
+
+    .payment_date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 13px;
+    }
+
+    .payment_date div {
+        display: flex;
+        align-items: center;
+    }
+
+    .additional_info {
+        display: flex;
+        width: 610px;
+    }
+
+    .agreement div,
+    .partner {
+        width: 295px;
+        font-size: 14.7px;
+    }
+
+    .agreement div div {
+        border: unset !important;
+    }
+
+    .agreement div:nth-child(2n + 1) {
+        border-right: 0.3px #b6bcc3 solid;
+        width: 315px;
+        display: flex;
+    }
+
+    .partner {
+        width: 315px;
+        display: flex;
+    }
+
+    .popover_content {
+        width: 285px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .scheduleList {
+        width: 60%;
+    }
+
+    .scheduleList li {
+        width: 47%;
+        padding: 5px 10px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .scheduleList {
+        width: 45%;
+    }
+
+    .scheduleList li {
+        width: 46%;
+        padding: 5px 10px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .payment,
+    .scheduleList,
+    .payment_list {
+        color: #ffffff;
+        background: #4e565f !important;
+    }
+
+    .timePeriod {
+        color: #ef3124 !important;
+    }
+
+    .payment h6 {
+        color: #ffffff;
+    }
+    .scheduleList ul li div span span,
+    .payment_date,
+    .detail_modal p,
+    .detail_modal span,
+    .popover_content p,
+    .popover_content span {
+        color: #ffffff !important;
+    }
+    .title {
+        color: #b6bcc3;
+    }
+    .tooltip div {
+        background-color: #b6bcc3 !important;
+    }
+    .scheduleList ul,
+    .scheduleList ul li:nth-child(1) {
+        border-color: #b6bcc3;
+    }
+}

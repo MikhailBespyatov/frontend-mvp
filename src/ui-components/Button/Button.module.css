@@ -1,0 +1,75 @@
+.cancel button {
+    width: 100%;
+    background: unset;
+    border: 1px solid rgba(151, 151, 151, 1);
+    border-radius: 4px;
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+    color: #172a3f;
+}
+
+.continue button {
+    background: #00a755 !important;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    height: 48px;
+    font-weight: 600;
+    line-height: 20.29px;
+    width: 100%;
+    padding: 0;
+}
+
+.button_wrapper .disabled {
+    background-color: rgba(0, 167, 85, 0.5) !important;
+    border: none;
+}
+
+.button_wrapper .disabled span {
+    color: white !important;
+    background-image: unset;
+    -webkit-text-fill-color: unset;
+}
+
+/*************** media queries ***************/
+@media (min-width: 320px) {
+    .cancel button,
+    .continue button {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+@media (min-width: 330px) {
+    .cancel button,
+    .continue button {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 768px) {
+    .button_wrapper button {
+        margin: 0 auto 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .button_wrapper {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .cancel button {
+        background-color: #ffffff;
+    }
+
+    .button_wrapper .disabled {
+        background-color: #69626f !important;
+    }
+}

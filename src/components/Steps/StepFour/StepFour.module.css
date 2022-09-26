@@ -1,0 +1,326 @@
+.wrapper {
+    margin: 0 15px;
+}
+
+.main_container h1 {
+    text-align: center;
+}
+
+.main_container P {
+    color: rgba(109, 121, 134, 1);
+    text-align: center;
+    padding: 0 4%;
+}
+
+.main_container P span {
+    font-weight: 700;
+}
+
+.main_container div a {
+    color: rgba(240, 69, 58, 1);
+}
+
+.desktop_bg_wrapper {
+    display: none;
+}
+
+/*************** media queries ****************/
+@media (min-width: 320px) {
+    .main_container button {
+        width: 100%;
+    }
+
+    .main_container h1 {
+        font-size: 18px;
+    }
+
+    .main_img {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+    }
+
+    .main_img .img {
+        width: 100%;
+    }
+
+    .input_container_btn {
+        position: absolute;
+        bottom: 15px;
+        width: 90%;
+    }
+
+    .main_container P {
+        padding: 0;
+    }
+
+    .mobileImg {
+        display: block;
+        width: 100%;
+    }
+
+    .img {
+        display: none;
+    }
+}
+
+@media (min-width: 360px) {
+    .main_container h1 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 480px) {
+    .main_img .img {
+        width: 80%;
+        display: block;
+        margin: 35px auto;
+    }
+
+    .img {
+        display: block;
+    }
+
+    .mobileImg {
+        display: none;
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    .main_img {
+        bottom: unset;
+    }
+
+    .main_img .img {
+        width: unset;
+        display: block;
+        margin: 35px auto;
+    }
+
+    .main_container {
+        width: 520px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .main_container div div {
+        width: 58%;
+        margin: 0 auto;
+    }
+
+    .main_container P {
+        /* width: 590px; */
+        font-size: 18px;
+    }
+}
+
+@media (max-height: 550px) {
+    .main_img {
+        position: unset;
+        width: 100%;
+        padding: 15px 0;
+    }
+}
+
+@media (min-width: 520px) {
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding: 0 46px;
+    }
+
+    .desktop_bg_wrapper {
+        display: block;
+        width: 28%;
+    }
+
+    .rightBg {
+        position: absolute;
+        top: 105px;
+        right: 70px;
+        width: 135px;
+        height: 133px;
+    }
+
+    .leftBg {
+        width: 27vw;
+        height: 100%;
+        margin-top: 25px;
+        margin-left: 40px;
+    }
+
+    .wrapper h1 {
+        padding: 0;
+        text-align: left;
+        margin: 0;
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .main_img {
+        display: flex;
+        flex-direction: row-reverse;
+        top: 15px;
+        left: 1px;
+        position: relative;
+        width: 75vw;
+    }
+
+    .main_img .img {
+        width: 250px;
+        height: 245px;
+        margin-left: 40px;
+    }
+
+    .main_container {
+        position: relative;
+        top: 77px;
+        left: 45px;
+        margin: 0;
+    }
+
+    .wrapper p {
+        text-align: left;
+        padding: 0;
+        margin: 22px auto 30px;
+        line-height: 23px;
+    }
+
+    .main_container div a {
+        padding: 0;
+    }
+
+    .main_container button {
+        width: 203px !important;
+        min-width: unset;
+    }
+
+    .main_container div div {
+        width: unset;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main_img .img {
+        width: unset;
+        height: 245px;
+        margin-left: 40px;
+    }
+}
+
+@media (min-width: 520px) and (max-width: 1024px) and (min-height: 801px) {
+    .wrapper {
+        height: 92vh !important;
+        margin-top: 2vh;
+        background-image: url('../../../assets/images/screen4/step4_tablet_bg.svg') !important;
+        background-repeat: no-repeat;
+        background-position: 0 35%;
+        background-size: contain;
+    }
+
+    .main_container {
+        width: 500px;
+        left: auto;
+        top: 15vh;
+    }
+
+    .desktop_bg_wrapper,
+    .rightBg {
+        display: none;
+    }
+
+    .main_img .img {
+        width: 50vw;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1311px) {
+    .desktop_bg_wrapper {
+        width: 30%;
+    }
+
+    .main_container {
+        width: 608px;
+    }
+
+    .main_img .img {
+        height: 345px;
+        width: 345px;
+    }
+
+    .rightBg {
+        top: 15%;
+        right: 6%;
+    }
+
+    .leftBg {
+        width: unset;
+        height: 600px;
+        margin-top: 56px;
+        margin-left: 45px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .main_container {
+        top: 13vh;
+    }
+
+    .main_container div div {
+        margin: unset;
+    }
+
+    .main_img .img {
+        height: 345px;
+        width: 345px;
+        left: 55px;
+        position: relative;
+        top: 7px;
+    }
+
+    .rightBg {
+        top: 19vh;
+        right: 9vw;
+        width: 155px;
+        height: 138px;
+    }
+
+    .leftBg {
+        height: 86vh;
+        margin-top: 56px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .wrapper p {
+        color: #6d7986;
+    }
+
+    .leftBg {
+        height: 80vh;
+    }
+    @media (max-width: 1300px) {
+        .leftBg {
+            width: 20vw !important;
+        }
+    }
+
+    @media (min-width: 1300px) {
+        .rightBg {
+            width: unset;
+            height: unset;
+        }
+    }
+
+    @media (min-width: 600px) and (max-width: 1024px) and (min-height: 801px) {
+        .wrapper {
+            background-image: url('../../../assets/images/black_mode/screen5/step5_tablet_bg.svg') !important;
+        }
+    }
+}

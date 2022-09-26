@@ -1,0 +1,13 @@
+.success svg {
+  background-color: #5fae50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  position: relative;
+  top: 0;
+  border-radius: 15px;
+}

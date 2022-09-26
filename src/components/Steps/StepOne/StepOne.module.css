@@ -1,0 +1,361 @@
+:root {
+    --checkbox-checked-bg-color: rgba(255, 92, 92, 1) !important;
+    --checkbox-checked-border-color: rgba(255, 92, 92, 1) !important;
+    --checkbox-checked-hover-bg-color: rgba(255, 92, 92, 1) !important;
+    --checkbox-checked-hover-border-color: rgba(255, 92, 92, 1) !important;
+    --checkbox-checked-active-bg-color: rgba(255, 92, 92, 1) !important;
+    --checkbox-checked-active-border-color: rgba(255, 92, 92, 1) !important;
+    --form-control-focus-border-bottom: 1px solid #b6bcc3 !important;
+    --form-control-hover-border-bottom: 1px solid #b6bcc3 !important;
+    --size-s-height: 38px !important;
+}
+
+.description {
+  color: #6D7986;
+}
+
+.form_container {
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 12px;
+}
+
+.input_container label {
+    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #6d7986;
+}
+
+.iinError div::before {
+    border-bottom: 1px solid rgba(255, 92, 92, 1) !important;
+}
+
+.phoneError div::before {
+    border-bottom: 1px solid rgba(255, 92, 92, 1) !important;
+}
+
+.titleError h1 {
+    color: rgba(255, 92, 92, 1);
+}
+
+.titleError p,
+.titleError a {
+    max-width: 500px;
+    font-size: 13px;
+    color: rgba(109, 121, 134, 1);
+}
+
+.titleError p a:hover {
+    color: rgba(255, 92, 92, 1);
+}
+
+.input_container input {
+    padding: 0;
+    height: 38px !important;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: normal;
+    font-size: normal;
+    color: #172a3f;
+}
+
+.input_container input::placeholder {
+    color: #6d7986 !important;
+}
+
+.input_container span {
+    font-size: 18px;
+}
+
+.masked_input {
+    display: flex;
+    width: 100%;
+    height: 38px;
+}
+
+.masked_input svg {
+    position: relative;
+    top: 0;
+    border-radius: 15px;
+    height: 16px;
+    width: 16px;
+}
+
+.intlPhoneInput svg {
+    position: relative;
+    left: -10px;
+    top: 0px;
+    color: rgb(138 160 185);
+}
+
+.intlPhoneInput div div div {
+    height: 46px;
+    min-height: unset !important;
+}
+
+.masked_input .error svg {
+    color: white;
+    background-color: rgba(255, 92, 92, 1);
+}
+
+.errorMessege {
+    color: rgba(255, 92, 92, 1);
+    font-size: 13px !important;
+    font-weight: 400;
+}
+
+.masked_input .success svg {
+    background-color: #5fae50;
+    color: white;
+}
+
+.input_container button {
+    width: 100%;
+}
+
+.wrapper h1 {
+    text-align: left !important;
+}
+
+.phone_input div div div div div div div div span span {
+    transform: scale(2);
+    margin-right: 10px;
+}
+
+.phone_input div div div {
+    padding-left: 20px;
+}
+
+.phone_input img {
+    position: absolute;
+    z-index: 99;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+/******************************** media queries ************************************/
+
+@media (min-width: 320px) {
+    .main_container {
+        width: calc(100vw - 32px);
+        margin: 0 auto;
+    }
+
+    .main_container h1 {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .input_container_btn {
+        position: absolute;
+        bottom: 15px;
+        width: 90%;
+    }
+
+    .input_container_btn button {
+        margin: 0;
+        width: 100%;
+    }
+
+    .titleError p,
+    .titleError a {
+        letter-spacing: -0.3px;
+    }
+}
+
+@media (min-width: 360px) {
+    .form_container {
+        margin-top: 40px;
+    }
+
+    .main_container h1 {
+        font-size: 24px;
+    }
+
+    .input_container:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .input_container_btn {
+        position: absolute;
+        bottom: 15px;
+        width: inherit;
+        margin: 0;
+    }
+
+    .input_container_btn button {
+        width: 100%;
+    }
+}
+
+@media (max-height: 540px) {
+    .input_container_btn {
+        position: unset;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 520px) {
+    .main_container {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .main_container h1 {
+        padding-top: 10vh;
+        margin-top: 0;
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .input_container_btn {
+        margin-top: 10%;
+        position: unset;
+        width: 150px !important;
+    }
+
+    .titleError p,
+    .titleError a {
+        font-size: 18px;
+        margin: 30px 0;
+    }
+}
+
+@media (min-width: 900px) {
+    .main_container {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .input_container_btn {
+        position: unset;
+        width: 98%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main_container {
+        width: 585px;
+        margin: 0 auto;
+        padding-bottom: 60px;
+    }
+
+    .main_container h1 {
+        padding-top: 128px;
+        margin-top: 0;
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .input_container {
+        margin-top: 25px;
+    }
+
+    .input_container label {
+        font-size: 14px !important;
+    }
+
+    .input_container:nth-child(2) {
+        margin-top: 60px;
+    }
+
+    .form_container {
+        width: 390px;
+    }
+
+    .form_container_mt {
+        margin-top: 80px;
+    }
+
+    .input_container_btn {
+        width: 100px;
+        margin-top: 70px;
+        position: unset;
+    }
+
+    .input_container_btn button {
+        min-width: 150px;
+    }
+
+    .wrapper {
+        background-image: url('../../../assets/images/screen1/step1-2_desktop_bg.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform: scale(0.98);
+        height: 92vh;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 520px) and (min-height: 801px) {
+    .main_container {
+        position: absolute;
+        right: 14%;
+        top: 0;
+    }
+
+    .wrapper {
+        background-image: url('../../../assets/images/screen1/step1-2_tablet_bg.svg') !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform: scale(0.98);
+        height: 92vh;
+    }
+}
+
+@media (min-width: 1300px) {
+    .main_container {
+        width: 42%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1500px) {
+    .main_container {
+        width: 37%;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .main_container {
+        width: 585px;
+        margin: 0 auto;
+    }
+}
+
+.test {
+    color: red;
+}
+
+@media (prefers-color-scheme: dark) {
+    .titleError p,
+    .titleError a {
+        color: #b6bcc3;
+    }
+
+    .input_container input {
+        color: #ffffff;
+        caret-color: #ffffff;
+    }
+
+    @media (min-width: 1024px) {
+        .wrapper {
+            background-image: url('../../../assets/images/black_mode/screen1/step1-2_desktop_bg.svg');
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 600px) and (min-height: 801px) {
+        .wrapper {
+            background-image: url('../../../assets/images/black_mode/screen1/step1-2_tablet_bg.svg') !important;
+        }
+    }
+}
