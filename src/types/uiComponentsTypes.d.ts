@@ -2,7 +2,7 @@ declare interface ISummary {
     summary: number;
 }
 declare interface ITitleProps {
-    title: string;
+    title: string | React.ReactNode;
 }
 
 declare interface IPartnerProps {

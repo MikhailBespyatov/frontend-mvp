@@ -10,8 +10,14 @@
     --size-s-height: 38px !important;
 }
 
+.numberError {
+    font-size: 13px !important;
+    line-height: 18px;
+    color: #ff5c5c;
+}
+
 .description {
-  color: #6D7986;
+    color: #6d7986;
 }
 
 .form_container {

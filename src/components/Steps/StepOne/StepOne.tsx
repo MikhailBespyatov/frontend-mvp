@@ -6,7 +6,7 @@ import { MaskedInput } from '@alfalab/core-components/masked-input';
 import { CheckmarkMIcon } from '@alfalab/icons-glyph';
 import { CrossMIcon } from '@alfalab/icons-glyph';
 
-import { _countdownDuration, _error, _errorCode, _preappId, _step, _user } from '../../../store/store';
+import { /*_countdownDuration, _error,*/ _errorCode, _preappId, _step, _user } from '../../../store/store';
 
 import { MASKS, PATTERNS, PLACEHOLDERS, ERROR_CASES, PAGE_CASES } from '../../../constants';
 
@@ -27,11 +27,16 @@ import { OldBrowserAlert } from 'ui-components/OldBrowserAlert/OldBrowserAlert';
 export default function StepOne(): JSX.Element {
     const [user, setUser] = useAtom(_user);
     const [step, setStep] = useAtom(_step);
-    const [error, setError] = useAtom(_error);
-    const [errorCode, setErrorCode] = useAtom(_errorCode);
-    const [, setCountdownDuration] = useAtom(_countdownDuration);
+    // const [error, setError] = useAtom(_error);
+    const [errorCode /*setErrorCode */] = useAtom(_errorCode);
+    // const [, setCountdownDuration] = useAtom(_countdownDuration);
 
-    const [title, setTitle] = useState<string>('Оформите рассрочку за 2 минуты');
+    const [title, setTitle] = useState<string | React.ReactNode>(
+        <span>
+            Оформите рассрочку
+            <br /> за 2 минуты
+        </span>,
+    );
     const [isDisabled, setIsDisabled] = useState<boolean>(true);
     const [userPhoneNumber, setUserPhoneNumber] = useState<string>('');
     const [iin, setIin] = useState<string>('');
@@ -85,23 +90,23 @@ export default function StepOne(): JSX.Element {
 
     const handleChange = () => {
         setStep(step + 1);
-        HttpService.sendSMS({ iin: user.iin, phoneNumber: user.phoneNumber, preappId: user.preappId })
-            .then((res) => {
-                setCountdownDuration(res.data.data.timeout * 1000);
-                setStep(step + 1);
-            })
-            .catch((err) => {
-                const { code } = err.response.data.error;
+        // HttpService.sendSMS({ iin: user.iin, phoneNumber: user.phoneNumber, preappId: user.preappId })
+        //     .then((res) => {
+        //         setCountdownDuration(res.data.data.timeout * 1000);
+        //         setStep(step + 1);
+        //     })
+        //     .catch((err) => {
+        //         const { code } = err.response.data.error;
 
-                setErrorCode(code);
-                if (code !== ERROR_CASES.IIN_PHONE_MISMATCH) {
-                    setError(!error);
-                    setPhoneNumberError(false);
-                } else {
-                    setPhoneNumberError(true);
-                    setPageError(true);
-                }
-            });
+        //         setErrorCode(code);
+        //         if (code !== ERROR_CASES.IIN_PHONE_MISMATCH) {
+        //             setError(!error);
+        //             setPhoneNumberError(false);
+        //         } else {
+        //             setPhoneNumberError(true);
+        //             setPageError(true);
+        //         }
+        //     });
     };
 
     const changeIin = (ev: ChangeEvent<HTMLInputElement>) => {
@@ -194,6 +199,9 @@ export default function StepOne(): JSX.Element {
                                 }
                             />
                         </div>
+                        <span className={styles.numberError}>
+                            {phoneNumberError ? 'Номер должен начинаться с +77 и содержать 11 цифр' : undefined}
+                        </span>
                     </div>
                     <div className={styles.input_container}>
                         <Agreement

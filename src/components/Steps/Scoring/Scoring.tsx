@@ -7,15 +7,17 @@ import configs from './configs/configs';
 
 import HttpService from 'HttpService/HttpService';
 
-import { _error, _errorCode, _partner, _paymentSchedule, _step } from 'store/store';
+import { _error, _errorCode, _partner, _paymentSchedule, _redirectLinkToMarket, _step } from 'store/store';
 import { ERROR_CASES } from '../../../constants';
 
 import { clouds } from 'configs/mode_change';
 import styles from './Scoring.module.css';
 import cn from 'classnames';
 import { PERCENT } from './constants';
+import UIButton from '../../../ui-components/Button/Button';
 
 export default function Scoring(): JSX.Element {
+    const [redirectLinkToMarket] = useAtom(_redirectLinkToMarket);
     const [step, setStep] = useAtom(_step);
     const [, setPartner] = useAtom(_partner);
     const [, setPaymentShedule] = useAtom(_paymentSchedule);
@@ -30,7 +32,7 @@ export default function Scoring(): JSX.Element {
         getStatus();
     }, []);
 
-    const timeoutId = setTimeout(() => setScoringStep(scoringStep + 1), 3000);
+    const timeoutId = setTimeout(() => setScoringStep(scoringStep + 1), 30000);
 
     if (scoringStep === 3) {
         clearTimeout(timeoutId);
@@ -74,6 +76,10 @@ export default function Scoring(): JSX.Element {
                 setErrorCode(code);
                 setError(!error);
             });
+    };
+
+    const goBack = () => {
+        window.location.href = redirectLinkToMarket;
     };
 
     return (
@@ -120,6 +126,7 @@ export default function Scoring(): JSX.Element {
                     </div>
                 </div> */}
             </div>
+            <UIButton btnType="continue" change={goBack} disable={false} title="Вернуться в магазин" />
         </div>
     );
 }

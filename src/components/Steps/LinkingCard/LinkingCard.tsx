@@ -12,7 +12,7 @@ import {
   _errorCode,
   _partner,
   _paymentSchedule,
-  _preappId,
+  // _preappId,
   _redirectLinkToMarket,
   _step,
   _userCards,
@@ -23,7 +23,7 @@ import { useState } from "react";
 import HttpService from "HttpService/HttpService";
 import Loader from "ui-components/Loader/Loader";
 import { ApplicationStep } from "store/store.types";
-import { PAGE_CASES } from "../../../constants";
+// import { PAGE_CASES } from '../../../constants';
 
 enum PageState {
   DECISION,
@@ -44,10 +44,10 @@ export const LinkingCard = (): JSX.Element => {
   const [, setErrorCode] = useAtom(_errorCode);
   const [step, setStep] = useAtom(_step);
   const [activeSavedCard] = useAtom(_activeSavedCard);
-  const [preappId] = useAtom(_preappId);
+  // const [preappId] = useAtom(_preappId);
   const [paymentSchedule] = useAtom(_paymentSchedule);
   const [partnerName] = useAtom(_partner);
-  let getStatusRunCount = 0;
+  // let getStatusRunCount = 0;
 
   const handleCancel = () => {
     setIsLoading(true);
@@ -73,6 +73,7 @@ export const LinkingCard = (): JSX.Element => {
     }
 
     setIsLoading(true);
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     HttpService.useCard(activeSavedCard)
       .then(() =>
@@ -107,54 +108,54 @@ export const LinkingCard = (): JSX.Element => {
     //         });
   };
 
-  const getStatus = async () => {
-    if (getStatusRunCount === 3) {
-      getStatusRunCount = 0;
-      setErrorCode(0);
-      setError(!error);
-      return;
-    }
-    HttpService.getStatus(preappId)
-      .then((res) => {
-        if (res.data.data.code === PAGE_CASES.COMPLETED) {
-          setStep(ApplicationStep.FINAL);
-          setIsLoading(false);
-        } else {
-          setTimeout(() => {
-            getStatusRunCount++;
-            getStatus();
-          }, 2000);
-        }
-      })
-      .catch(setInitialError);
-  };
+  // const getStatus = async () => {
+  //     if (getStatusRunCount === 3) {
+  //         getStatusRunCount = 0;
+  //         setErrorCode(0);
+  //         setError(!error);
+  //         return;
+  //     }
+  //     HttpService.getStatus(preappId)
+  //         .then((res) => {
+  //             if (res.data.data.code === PAGE_CASES.COMPLETED) {
+  //                 setStep(ApplicationStep.FINAL);
+  //                 setIsLoading(false);
+  //             } else {
+  //                 setTimeout(() => {
+  //                     getStatusRunCount++;
+  //                     getStatus();
+  //                 }, 2000);
+  //             }
+  //         })
+  //         .catch(setInitialError);
+  // };
 
-  const verifyCard = (formData: ICardData) => {
-    HttpService.verifyCard(formData)
-      .then((res) => {
-        if (res.status === 200) {
-          if (res.data.Code) {
-            getStatus();
-          }
-          if (res.data.body.cardRequestLink) {
-            window.location.href = res.data.body.cardRequestLink;
-          }
-        }
-      })
-      .catch(() => {
-        getStatus();
-      });
-  };
+  // const verifyCard = (formData: ICardData) => {
+  //     HttpService.verifyCard(formData)
+  //         .then((res) => {
+  //             if (res.status === 200) {
+  //                 if (res.data.Code) {
+  //                     getStatus();
+  //                 }
+  //                 if (res.data.body.cardRequestLink) {
+  //                     window.location.href = res.data.body.cardRequestLink;
+  //                 }
+  //             }
+  //         })
+  //         .catch(() => {
+  //             getStatus();
+  //         });
+  // };
 
-  const verifyOrder = (formData: ICardData) => {
-    HttpService.verifyOrder()
-      .then((res) => {
-        if (res.status === 200) {
-          verifyCard(formData);
-        }
-      })
-      .catch(setInitialError);
-  };
+  // const verifyOrder = (formData: ICardData) => {
+  //     HttpService.verifyOrder()
+  //         .then((res) => {
+  //             if (res.status === 200) {
+  //                 verifyCard(formData);
+  //             }
+  //         })
+  //         .catch(setInitialError);
+  // };
 
   const onSubmit = () => {
     const formData = { ...data, exp_year: `${START_DATE}${data.exp_year}` };
@@ -167,7 +168,7 @@ export const LinkingCard = (): JSX.Element => {
     } else {
       setStep(step + 1);
       setIsLoading(true);
-      verifyOrder(formData);
+      // verifyOrder(formData);
     }
   };
 
